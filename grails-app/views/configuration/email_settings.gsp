@@ -25,18 +25,22 @@
 		<div class="alert alert-info" role="status">${flash.message}</div>
 	</g:if>
 	
+
 	<ul class="nav nav-tabs" style="margin-bottom:30px;">
-		<li class="inactive"><g:link uri="/configuration/settings" class="btn btn-default">Store Settings</g:link></li>
-		<li class="active"><g:link uri="/configuration/email_settings" class="btn btn-default">Email Settings</g:link></li>
-		<li class="inactive"><g:link uri="/configuration/payment_settings" class="btn btn-default">Payment Settings</g:link></li>
-		<li class="inactive"><g:link uri="/configuration/shipping_settings" class="btn btn-default">Shipping Settings</g:link></li>
+		<li class="inactive"><g:link uri="/configuration/settings" class="btn btn-default"><g:message code="store.settings"/></g:link></li>
+
+		<li class="active"><g:link uri="/configuration/email_settings" class="btn btn-default"><g:message code="email.settings"/></g:link></li>
+		
+		<li class="inactive"><g:link uri="/configuration/payment_settings" class="btn btn-default"><g:message code="payment.settings"/></g:link></li>
+		
+		<li class="inactive"><g:link uri="/configuration/shipping_settings" class="btn btn-default"><g:message code="shipping.settings"/></g:link></li>
 	</ul>
 	
 	
 	<form action="save_email_settings" class="form-horizontal">
 	
 		<div class="form-row">
-			<span class="form-label twohundred">Username</span>
+			<span class="form-label twohundred"><g:message code="username"/></span>
 			<span class="input-container">
 				<input type="text" class="form-control" name="username" value="${email_settings.username}" style="width:300px"/>
 			</span>
@@ -44,7 +48,7 @@
 		</div>
 
 		<div class="form-row">
-			<span class="form-label twohundred">Password</span>
+			<span class="form-label twohundred"><g:message code="password"/></span>
 			<span class="input-container">
 				<input type="password" class="form-control" name="password" value="${email_settings.password}" style="width:300px"/>
 			</span>
@@ -52,7 +56,7 @@
 		</div>
 
 		<div class="form-row">
-			<span class="form-label twohundred">Host</span>
+			<span class="form-label twohundred"><g:message code="host"/></span>
 			<span class="input-container">
 				<input type="text" class="form-control" name="host" value="${email_settings.host}" style="width:300px"/>
 			</span>
@@ -60,7 +64,7 @@
 		</div>
 		
 		<div class="form-row">
-			<span class="form-label twohundred">Port</span>
+			<span class="form-label twohundred"><g:message code="port"/></span>
 			<span class="input-container">
 				<input type="text" class="form-control" name="port" value="${email_settings.port}" style="width:100px"/>
 			</span>
@@ -77,7 +81,7 @@
 		</div>
 		
 		<div class="form-row">
-			<span class="form-label twohundred">STARTTLS Enabled</span>
+			<span class="form-label twohundred">STARTTLS <g:message code="enabled"/></span>
 			<span class="input-container">
 				<input type="checkbox" ${email_settings.startTls} name="startTls"/>
 			</span>
@@ -86,8 +90,8 @@
 		
 	
 		<div class="form-row">
-			<span class="form-label twohundred">Admin/Notification Email Addresses
-				<p class="information secondary">Comma separated list of emails that will receive notification emails for registrations, orders & other updates</p>
+			<span class="form-label twohundred"><g:message code="admin.notification"/>
+				<p class="information secondary"><g:message code="comma.separated"/></p>
 			</span>
 			<span class="input-container">
 				<textarea class="form-control threefifty" style="height:100px;" name="adminEmail">${email_settings.adminEmail}</textarea>
@@ -96,8 +100,8 @@
 		</div>
 		
 		<div class="form-row">
-			<span class="form-label twohundred">Support Email Address
-				<p class="information secondary">The "From" address on all outgoing emails</p>
+			<span class="form-label twohundred"><g:message code="support.email"/>
+				<p class="information secondary"><g:message code="the.from.address"/></p>
 			</span>
 			<span class="input-container">
 				<input type="text" class="form-control twohundred" name="supportEmail" value="${email_settings.supportEmail}"/>

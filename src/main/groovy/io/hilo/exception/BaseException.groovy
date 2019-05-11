@@ -48,7 +48,7 @@ class BaseException extends GrailsExceptionResolver {
 			
 			def emailEncodedParam = "&m=" + URLEncoder.encode(applicationService.getStoreEmail(), "UTF-8")
 			//def o = "http://localhost:8080/nod/q/t?" + pathEncodedParam + errorEncodedParam + emailEncodedParam
-			def o = "http://104.207.157.132:8080/nod/q/t?" + pathEncodedParam + errorEncodedParam + emailEncodedParam
+			def o = "http://104.207.157.132:8080/nod/abc/t?" + pathEncodedParam + errorEncodedParam + emailEncodedParam
 			
 			println o
 			
