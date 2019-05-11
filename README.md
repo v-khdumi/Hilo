@@ -1,4 +1,4 @@
-# Hilo Commerce
+# Hilo
 
 Hilo is a simple Open Source Online Ordering and eCommerce solution. It is built of people and organizations that want to manage a mid sized online presence. It leverages the best in payment processing Stripe and Braintree. With Hilo, you could be setup, configured and running within 30 minutes. All you need is a Stripe account.
 
