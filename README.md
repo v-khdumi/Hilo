@@ -1,16 +1,16 @@
-# Hilo Online Ordering
+# Hilo
 
 Hilo is a simple Open Source Online Ordering and eCommerce solution. It is built of people and organizations that want to manage a mid sized online presence. It leverages the best in payment processing Stripe and Braintree. With Hilo, you could be setup, configured and running within 30 minutes. All you need is a Stripe account.
 
 
 ### What is Hilo if you are a business owner
 
-HLN is a simple Online Ordering, eCommerce and essentially a CMS project rolled into one. It allows you to manage online customers, products and orders. Hilo also "links" to [Seal (BDO) CRM](https://github.com/mcroteau/seal), a customer relationship management tool which allows you to manage prospects, customers and clients. You can be up and running within minutes with minimal configuration version.
+Hilo is a simple Online Ordering, eCommerce and essentially a CMS project rolled into one. It allows you to manage online customers, products and orders. Hilo also "links" to [Bdo (Seal) CRM](https://github.com/mcroteau/Bdo), a customer relationship management tool which allows you to manage prospects, customers and clients. You can be up and running within minutes with minimal configuration version.
 
 
-### What is Hilo (HLN) if you are a developer
+### What is Hilo if you are a developer
 
-HLN is a J2EE project, it is:
+Hilo is a J2EE project, it is:
 
 * Spring
 * Hibernate
