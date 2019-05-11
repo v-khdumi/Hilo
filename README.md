@@ -1,4 +1,4 @@
-![alt text](http://openabc.xyz/images/hilo.png)
+![Hilo Open Commerce](http://openabc.xyz/images/hilo-icon.png)
 
 # Hilo
 
