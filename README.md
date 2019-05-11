@@ -7,7 +7,7 @@ Hilo is a simple Open Source Online Ordering and eCommerce solution. It is built
 
 ### What is Hilo if you are a business owner
 
-Hilo is a simple Online Ordering, eCommerce and essentially a CMS project rolled into one. It allows you to manage online customers, products and orders. Hilo also "links" to [Bdo (Seal) CRM](https://github.com/mcroteau/Bdo), a customer relationship management tool which allows you to manage prospects, customers and clients. You can be up and running within minutes with minimal configuration version.
+Hilo is a simple Online Ordering, eCommerce and essentially a CMS project rolled into one. It allows you to manage online customers, products and orders. Hilo "links" to [Bdo (Seal) CRM](https://github.com/mcroteau/Bdo), a customer relationship management tool which allows you to manage prospects, customers and clients. You can be up and running within minutes with minimal configuration version.
 
 
 ### What is Hilo if you are a developer
