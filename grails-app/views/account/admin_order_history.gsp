@@ -9,7 +9,7 @@
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'transaction.label', default: 'Transaction')}" />
-		<title>Pelican : Orders</title>
+		<title>Hilo : Orders</title>
 	</head>
 	<body>
 

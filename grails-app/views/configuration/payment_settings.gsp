@@ -5,7 +5,7 @@
 <head>
 	<meta name="layout" content="admin">
 	<g:set var="entityName" value="${message(code: 'catalog.label', default: 'Catalog')}" />
-	<title>Pelican : Payment Settings</title>
+	<title>Hilo : Payment Settings</title>
 	<style type="text/css">
 		.section{
 			margin:10px 20px 30px 0px;
@@ -66,7 +66,7 @@
 				<div class="pull-left" style="display:inline-block; width:500px; margin-left:20px;">
 					<a href="http://www.stripe.com" alt="Visit Stripe : Payments API Gateway" style="border:none;text-decoration:none"><img src="${resource(dir:'images/app', file:'stripe-logo.png')}" style="height:20%; width:20%;outline:none"/></a>
 		
-					<p class="information secondary" style="margin-top:0px !important;">Stripe is a developer-friendly way to accept payments online.  To continue, you will need a Stripe account to accept payments with Pelican. <a href="http://stripe.com" target="_blank">Visit Stripe</a>.</p>
+					<p class="information secondary" style="margin-top:0px !important;">Stripe is a developer-friendly way to accept payments online.  To continue, you will need a Stripe account to accept payments with Hilo. <a href="http://stripe.com" target="_blank">Visit Stripe</a>.</p>
 				</div>
 				<br class="clear">
 			</div>
@@ -88,7 +88,7 @@
 					<br/>
 					
 					<br/>
-					<p class="information secondary">Pelican is configured to handle the country currencies listed.<br/> You can add more by editing CountryStatesHelper, the CurrencyService and this view</p>
+					<p class="information secondary">Hilo is configured to handle the country currencies listed.<br/> You can add more by editing CountryStatesHelper, the CurrencyService and this view</p>
 					
 					<p class="information secondary">Stripe is currently supported in 26 countries.</p>
 					
@@ -103,7 +103,7 @@
 					<p class="information secondary">No matter what country you’re based in, you can use 
 						<a href="https://stripe.com/atlas" target="_blank">Atlas</a> to easily incorporate a U.S. company, set up a U.S. bank account, and start accepting payments with Stripe. <a href="https://stripe.com/atlas" target="_blank">Request an invite</a></p>
 			
-					<p class="information secondary">Pelican, DataTundra, MGi Data Source or Mike Croteau are not liable for your configuration.</p>
+					<p class="information secondary">Hilo, DataTundra, MGi Data Source or Mike Croteau are not liable for your configuration.</p>
 				</div>
 				<br class="clear"/>			
 			</div>
@@ -179,7 +179,7 @@
 				<div class="pull-left" style="display:inline-block; width:500px; margin-left:20px;">
 					<a href="http://www.braintreepayments.com" alt="Visit Braintree : Payments API Gateway" style="border:none;text-decoration:none"><img src="${resource(dir:'images/app', file:'braintree-logo.png')}" style="height:30%; width:30%;outline:none"/></a>
 		
-					<p class="information secondary" style="margin-top:0px !important;">Braintree is a developer-friendly way to accept payments online.  To continue, you will need a Braintree account to accept payments with Pelican. <a href="http://braintreepayments.com" target="_blank">Visit Braintree</a>.</p>
+					<p class="information secondary" style="margin-top:0px !important;">Braintree is a developer-friendly way to accept payments online.  To continue, you will need a Braintree account to accept payments with Hilo. <a href="http://braintreepayments.com" target="_blank">Visit Braintree</a>.</p>
 				</div>
 				<br class="clear">
 			</div>
@@ -208,7 +208,7 @@
 					
 					<p class="information secondary">The currency and country you select should match the country in which your business is located and used when setting up your Braintree account unless you are setting up a site in another country</p>
 					
-					<p class="information secondary">Pelican, DataTundra, MGi Data Source or Mike Croteau are not liable for your configuration.</p>
+					<p class="information secondary">Hilo, DataTundra, MGi Data Source or Mike Croteau are not liable for your configuration.</p>
 				</div>
 				<br class="clear"/>			
 			</div>

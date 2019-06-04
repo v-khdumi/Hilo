@@ -8,7 +8,7 @@
 <head>
 	<meta name="layout" content="admin">
 	<g:set var="entityName" value="${message(code: 'catalog.label', default: 'Catalog')}" />
-	<title>Pelican : Shipping Settings</title>
+	<title>Hilo : Shipping Settings</title>
 	<style type="text/css">
 		.section{
 			margin:10px 20px 30px 0px;
@@ -148,7 +148,7 @@
 			<br class="clear"/>
 		</div>
 		
-		<p class="information secondary"><strong>EasyPost</strong> integrates USPS, UPS, DHL and FedEx with Pelican for realtime shipping calculations and shipping labels.  You will need an account with EasyPost to take advantage of these features.  <a href="http://easypost.com" target="_blank">EasyPost Website</a>.</p>
+		<p class="information secondary"><strong>EasyPost</strong> integrates USPS, UPS, DHL and FedEx with Hilo for realtime shipping calculations and shipping labels.  You will need an account with EasyPost to take advantage of these features.  <a href="http://easypost.com" target="_blank">EasyPost Website</a>.</p>
 		
 		
 

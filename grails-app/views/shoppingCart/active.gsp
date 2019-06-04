@@ -7,7 +7,7 @@
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'product.label', default: 'Product')}" />
-		<title>Pelican : Active Shopping Carts</title>
+		<title>Hilo : Active Shopping Carts</title>
 		<style type="text/css">
 			input#searchbox{
 				float:right;

@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : View Import</title>
+		<title>Hilo : View Import</title>
 	</head>
 	<body>
 		
@@ -22,7 +22,7 @@
 					<h2 style="margin:10px 0px; padding:0px;">Data Check</h2>
 					<p class="secondary">Import &amp; Export is meant as an alternate backup mechanism of data<br/>
 					No Data will be imported, this will just display data to be imported<br/>
-					Expecting Pelican Json formatted data</p>
+					Expecting Hilo Json formatted data</p>
             		
             		
 					<g:uploadForm action="import_data" class="form-horizontal" >
@@ -77,7 +77,7 @@
 					<h2 style="margin-top:0px">Import Data</h2>
             		
 					<p class="secondary">This will perform the actual data import<br/>
-					Expecting Pelican Backup Json formatted data. <br/>Run 'Data Check' to insure data to be imported is correct</p>
+					Expecting Hilo Backup Json formatted data. <br/>Run 'Data Check' to insure data to be imported is correct</p>
 					
 					
 					<g:uploadForm action="import_data" class="form-horizontal" >

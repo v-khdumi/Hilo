@@ -12,7 +12,7 @@ page import="io.hilo.Transaction"
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
-		<title>Pelican : <g:message code="accounts"/></title>
+		<title>Hilo : <g:message code="accounts"/></title>
 
 		<style type="text/css">
 			#newsletter-signups-link{

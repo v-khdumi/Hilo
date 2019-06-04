@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession
 
 //TODO: thanks 
 //https://groggyman.com/2015/04/05/custom-authentication-success-handler-with-grails-and-spring-security/
-class PelicanAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+class HiloAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
 	def requestCache
 	boolean administrator = false

@@ -5,7 +5,7 @@
 <head>
 	<meta name="layout" content="admin">
 	<g:set var="entityName" value="${message(code: 'catalog.label', default: 'Catalog')}" />
-	<title>Pelican : Select Gateway</title>
+	<title>Hilo : Select Gateway</title>
 
 	<link rel="stylesheet" href="${resource(dir:'js/lib/ckeditor/4.4.0', file:'contents.css')}" />	
 	<link rel="stylesheet" href="${resource(dir:'css', file:'admin.css')}" />
@@ -138,7 +138,7 @@
 	<h2>Gateway Settings</h2>
 		
 
-	<p class="information" style="width:91%">In order for Pelican to work, you need to have a payment gateway account with either <a href="http://www.stripe.com" target="_blank">Stripe</a> or <a href="http://www.braintreepayments.com" target="_blank">Braintree</a>. These services allow you to quickly setup Merchant accounts to 
+	<p class="information" style="width:91%">In order for Hilo to work, you need to have a payment gateway account with either <a href="http://www.stripe.com" target="_blank">Stripe</a> or <a href="http://www.braintreepayments.com" target="_blank">Braintree</a>. These services allow you to quickly setup Merchant accounts to 
 	start accepting payments (recommended : <a href="http://www.stripe.com" target="_blank">Stripe</a>). 
 			<g:link controller="configuration" action="payment_settings">Return to Payment Settings</g:link></p>
 

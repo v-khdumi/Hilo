@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : <g:message code="pages"/></title>
+		<title>Hilo : <g:message code="pages"/></title>
 	</head>
 	<body>
 	

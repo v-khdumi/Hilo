@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : Catalog Administration</title>
+		<title>Hilo : Catalog Administration</title>
 		<style type="text/css">
 			#menu-view-container{
 				padding:20px;

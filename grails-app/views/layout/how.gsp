@@ -76,7 +76,7 @@
 			
 			<p><strong>web-app -> templates -> storefront</strong></p>
 			
-			<p>This is the main layout file for Pelican storefront.  This file gets read and <strong>[[STORE_LAYOUT]]</strong> gets replaced by the html code entered in the <strong>Store Layout Editor</strong></p>
+			<p>This is the main layout file for Hilo storefront.  This file gets read and <strong>[[STORE_LAYOUT]]</strong> gets replaced by the html code entered in the <strong>Store Layout Editor</strong></p>
 			
 			<p><strong>current layout-wrapper.html : </strong>
 <pre>&lt;!DOCTYPE html&gt;

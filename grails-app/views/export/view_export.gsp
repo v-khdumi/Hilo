@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : View Export</title>
+		<title>Hilo : View Export</title>
 		<style type="text/css">
 			/*.borderless td, .borderless th {
 			    border: none;
@@ -18,7 +18,7 @@
 		<div id="export-data-view" class="content" role="main">
 		
 			<h2>Export Data</h2>
-			<p class="secondary">All Pelican data can be exported from this screen. No data will be altered, only exported. <br/>You can use this data to import into a new instance of Pelican or use at your own will.</p>
+			<p class="secondary">All Hilo data can be exported from this screen. No data will be altered, only exported. <br/>You can use this data to import into a new instance of Hilo or use at your own will.</p>
 		
 			<g:form action="export_data" >
 			

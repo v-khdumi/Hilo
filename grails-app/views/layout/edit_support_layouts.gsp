@@ -4,7 +4,7 @@
 <head>
 	<meta name="layout" content="admin">
 	
-	<title>Pelican : Shipping Settings</title>
+	<title>Hilo : Shipping Settings</title>
 	<style type="text/css">
 		.section{
 			margin:10px 20px 30px 0px;

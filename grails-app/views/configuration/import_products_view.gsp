@@ -8,7 +8,7 @@
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'product.label', default: 'Product')}" />
-		<title>Pelican : Product Import</title>
+		<title>Hilo : Product Import</title>
 	</head>
 	<body>
 	

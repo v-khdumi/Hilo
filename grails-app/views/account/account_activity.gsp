@@ -5,7 +5,7 @@
 	<head>
 		<meta name="layout" content="admin">
 		<g:set var="entityName" value="${message(code: 'account.label', default: 'Account')}" />
-		<title>Pelican : Account Activity</title>
+		<title>Hilo : Account Activity</title>
 
 	</head>
 	<body>

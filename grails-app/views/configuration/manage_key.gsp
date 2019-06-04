@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<title>Pelican : Manage Data Access Key</title>
+		<title>Hilo : Manage Data Access Key</title>
 	</head>
 	<body>
 

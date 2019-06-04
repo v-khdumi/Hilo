@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta name="layout" content="admin">
-	<title>Pelican : Edit Product</title>
+	<title>Hilo : Edit Product</title>
 </head>
 <body>
 	

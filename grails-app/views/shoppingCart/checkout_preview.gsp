@@ -400,7 +400,7 @@ $(document).ready(function(){
 	
 	
 	<g:if test="${publishableKey == ""}">
-		alert("Error\nThis site has not been properly configured with Stripe Account information.  Please make sure you have created a Stripe Account and successfully entered API Keys in the Pelican Stripe Settings area");
+		alert("Error\nThis site has not been properly configured with Stripe Account information.  Please make sure you have created a Stripe Account and successfully entered API Keys in the Hilo Stripe Settings area");
 		$submitBtn.attr("disabled", "disabled");
 	</g:if>
 	
