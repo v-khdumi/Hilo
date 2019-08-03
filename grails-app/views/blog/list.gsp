@@ -12,58 +12,70 @@
 	</head>
 	<body>
 	
+	<div class="form-container">
+
+		<h2 class="floatleft">Posts
+		
+			<g:link action="manage" class="btn btn-default pull-right">Categories</g:link>
+			<br class="clear"/>
+		</h2>
+		
+		<br class="clear"/>
+
+
 		<g:if test="${posts}">
-			<div id="list-page" class="content scaffold-list" role="main">
-
-				<h2 class="floatleft">Posts</h2>
 			
-				<g:link controller="page" action="create" class="btn btn-primary pull-right">New Blog Post</g:link>
+			<g:link action="create" class="btn btn-primary pull-right">New Blog Post</g:link>
+		
+			<br class="clear"/>
 			
-				<br class="clear"/>
-				
-				<g:if test="${flash.message}">
-					<div class="alert alert-info" role="status">${flash.message}</div>
-				</g:if>
-				
-				
-				<br style="clear:both">
-				
-				<table class="table">
-					<thead>
-						<tr>
-							<g:sortableColumn property="id" title="${message(code: 'id', default: 'Id')}" />
-						
-							<g:sortableColumn property="title" title="${message(code: 'title', default: 'Title')}" />
-
-							<th><g:message code="layout"/></th>
-							
-							<th></th>
-						
-						</tr>
-					</thead>
-					<tbody>
-					<g:each in="${posts}" status="i" var="post">
-						<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+			<g:if test="${flash.message}">
+				<div class="alert alert-info" role="status">${flash.message}</div>
+			</g:if>
+			
+			
+			<br style="clear:both">
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<g:sortableColumn property="id" title="${message(code: 'id', default: 'Id')}" />
 					
-							<td><g:link action="edit" id="${post.id}">${post.id}</g:link></td>
+						<g:sortableColumn property="title" title="${message(code: 'title', default: 'Title')}" />
 
-							<td><g:link action="edit" id="${post.id}">${post.title}</g:link></td>
+						<th>Blog Category</th>
+
+						<th><g:message code="layout"/></th>
 						
-							<td><g:link controller="layout" action="edit" id="${post.layout.id}">${post.layout.name}</g:link></td>
-						
-							<td><g:link action="edit" id="${post.id}" class=""><g:message code="edit"/></g:link></td>
-						
-						</tr>
-					</g:each>
-					</tbody>
-				</table>
-				<div class="pagination">
-					<g:paginate total="${postsTotal}" />
-				</div>
+						<th></th>
+					
+					</tr>
+				</thead>
+				<tbody>
+				<g:each in="${posts}" status="i" var="post">
+					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+				
+						<td><g:link action="edit" id="${post.id}">${post.id}</g:link></td>
+
+						<td><g:link action="edit" id="${post.id}">${post.title}</g:link></td>
+					
+						<td>${post.blogCategory.name}</td>
+
+						<td><g:link controller="layout" action="edit" id="${post.layout.id}">${post.layout.name}</g:link></td>
+					
+						<td><g:link action="edit" id="${post.id}" class=""><g:message code="edit"/></g:link></td>
+					
+					</tr>
+				</g:each>
+				</tbody>
+			</table>
+			<div class="pagination">
+				<g:paginate total="${postsTotal}" />
 			</div>
 		</g:if>
 		<g:else>
 			<div class="alert alert-info">No posts created yet. <g:link action="create">Create First Blog Post</g:link></div>
 		</g:else>
+	</div>
 	</body>
 </html>

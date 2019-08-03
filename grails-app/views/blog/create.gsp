@@ -3,10 +3,12 @@
 <html>
 	<head>
 		<meta name="layout" content="admin">
-		<g:set var="entityName" value="${message(code: 'catalog.label', default: 'Catalog')}" />
+
 		<title>Create Catalog</title>
+		
 		<link rel="stylesheet" href="${resource(dir:'js/lib/ckeditor/4.4.0', file:'contents.css')}" />	
 		<script type="text/javascript" src="${resource(dir:'js/lib/ckeditor/4.4.0/ckeditor.js')}"></script>
+	
 		<script type="text/javascript" src="${resource(dir:'js/lib/ckeditor/4.4.0/styles.js')}"></script>
 	
 		<link rel="stylesheet" href="${resource(dir:'css', file:'admin.css')}" />
@@ -21,7 +23,7 @@
 			<div class="form-container">
 			
 				<h2>Create Post
-					<g:link controller="catalog" action="list" class="btn btn-default pull-right">Back to Posts</g:link>
+					<g:link action="list" class="btn btn-default pull-right">Back to Posts</g:link>
 					<br class="clear"/>
 				</h1>
 			
@@ -71,7 +73,7 @@
 			 			<span class="input-container">
 							<g:select name="blogCategory.id"
 									from="${categories}"
-									value="${postInstance?.category?.id}"
+									value="${postInstance?.blogCategory?.id}"
 									optionKey="id" 
 									optionValue="name" 
 									class="form-control threehundred"/>

@@ -9,8 +9,11 @@ import io.hilo.Layout
 class BlogController {
 
 
- 	@Secured(['ROLE_ADMIN'])
-	def index(){}
+ 	@Secured(['permitAll'])
+	def index(){
+		def posts = BlogPost.list([max: 3, order: 'dateCreated'])
+		[ posts: posts ]
+	}
 
 
  	@Secured(['ROLE_ADMIN'])
@@ -39,8 +42,9 @@ class BlogController {
     	def postInstance = new BlogPost(params)
     	if (!postInstance.save(flush: true)) {
 			def layouts = Layout.list()
+			def categories = BlogCategory.list()
 			flash.message = "Something went wrong. Please try again"
-    	    render(view: "create", model: [postInstance: postInstance, layouts: layouts ])
+    	    render(view: "create", model: [postInstance: postInstance, layouts: layouts, categories: categories ])
     	    return
     	}
     	
@@ -62,10 +66,10 @@ class BlogController {
 
 		if(!categories){
 			flash.message = "No blog categories found, you must create at least one category in order to continue."
-			redirect(action:"create_category")
+			redirect(action:"manage")
 			return
 		}
-		[ postInstance: postInstance, layouts: layouts ]
+		[ postInstance: postInstance, layouts: layouts, categories: categories ]
 	}
 
 
@@ -115,7 +119,61 @@ class BlogController {
 
 
  	@Secured(['permitAll'])
-	def view(id){}
+	def view(id){
+		def postInstance = BlogPost.get(id)
+		if(!postInstance){
+			flash.message = "Unable to find blog post..."
+			redirect(action: "list")
+			return
+		}
+		[ postInstance: postInstance ]
+	}
+
+
+
+ 	@Secured(['ROLE_ADMIN'])
+	def manage(){
+    	params.max = 10
+    	[ categories: BlogCategory.list(params), categoriesTotal: BlogCategory.count() ]
+	}
+
+
+ 	@Secured(['ROLE_ADMIN'])
+	def add_category(){
+		def category = new BlogCategory(params)
+    	if (!category.save(flush: true)) {
+			flash.message = "Something went wrong. Please try again"
+    	    render(view: "manange", model: [ category: category ])
+    	    return
+    	}
+    	
+    	flash.message = "Successfully saved blog category"
+    	redirect(action: "manage")
+	}
+
+
+ 	@Secured(['ROLE_ADMIN'])
+	def remove_category(Long id){		
+		def categoryInstance = BlogCategory.get(id)
+		if(!categoryInstance){
+			flash.message = "Unable to find blog category..."
+			redirect(action: "manage")
+			return true
+		}
+
+		def categories = BlogCategory.list()
+
+		if(categories.size() == 1){
+			flash.message = "You need at least one additional category to continue."
+			redirect(action: "manage")
+			return true
+		}
+
+		categoryInstance.delete(flush:true)
+		flash.message = "Successfully deleted blog category."
+		redirect(action: "manage")
+	}
+
 
 
 }

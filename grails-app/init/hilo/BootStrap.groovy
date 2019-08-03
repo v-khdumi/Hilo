@@ -252,6 +252,7 @@ class BootStrap {
 		def name = "Tutorials & How To's"
     	def blogCategory = BlogCategory.findByName(name)
     	if(!blogCategory){
+    		blogCategory = new BlogCategory()
     		blogCategory.name = name
     		blogCategory.description = "<p>Latest and greatest, everything how to</p>"
     		blogCategory.save(flush:true)

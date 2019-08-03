@@ -65,8 +65,21 @@
 						<br class="clear"/>
 					</div>
 					
-						  
 
+			 		<div class="form-row">
+			 			<span class="form-label twohundred secondary">Category</span>
+			 			<span class="input-container">
+							<g:select name="blogCategory.id"
+									from="${categories}"
+									value="${postInstance?.blogCategory?.id}"
+									optionKey="id" 
+									optionValue="name" 
+									class="form-control threehundred"/>
+			 			</span>
+			 			<br class="clear"/>
+			 		</div>
+					
+						 
 				
 					<div class="form-row">
 						<g:textArea class="form-control ckeditor" name="content" id="content" cols="40" rows="15" maxlength="65535" value="${postInstance?.content}"/>
@@ -91,6 +104,9 @@
 				
 				
 					<div class="buttons-container">
+						<g:form action="delete" id="${postInstance.id}" method="post">
+							
+						</g:form>
 						<g:submitButton name="create" class="btn btn-primary" value="Update Post" />
 					</div>
 					

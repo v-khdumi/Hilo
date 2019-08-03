@@ -16,9 +16,7 @@ class BlogPost {
 	Date dateCreated
 	Date lastUpdated
 
-
 	static belongsTo = [ blogCategory: BlogCategory ]
-
 
     static constraints = {
 		uuid(nullable:true)
