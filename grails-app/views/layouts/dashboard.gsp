@@ -9,6 +9,8 @@
     
 	<title><g:layoutTitle default="Hilo : ${message(code: "administration")}" /></title>
 
+	<link rel="icon" type="image/x-icon" href="${resource(dir:'images/app', file:'hilo-icon.png')}" />
+
 
 	<link rel="stylesheet" href="${resource(dir:'bootstrap/3.1.1/css', file:'bootstrap.min.css')}" />
 	<script type="text/javascript" src="${resource(dir:'js/lib/jquery/1.11.0/jquery.js')}"></script>
@@ -116,6 +118,9 @@
 				<li><g:link uri="/catalog/list" class="${catalogsActive}"><g:message code="catalogs" /></g:link></li>
 				<li><g:link uri="/transaction/list" class="${ordersActive}"><g:message code="orders" /></g:link></li>
 				<li><g:link uri="/page/list" class="${pagesActive}"><g:message code="pages" /></g:link></li>
+				
+				<li><g:link uri="/blog/list" class="${blogActive}"><g:message code="blog" /></g:link></li>
+				
 				<li><g:link uri="/account/admin_list?admin=false" class="${accountsActive}"><g:message code="accounts" /></g:link></li>
 				<li><g:link uri="/configuration/index" class="${importActive}"><g:message code="import.export" /></g:link></li>
 				<li><g:link uri="/layout/index" class="${layoutActive}"><g:message code="store.layouts" /></g:link></li>

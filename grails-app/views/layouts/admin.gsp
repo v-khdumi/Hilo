@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 	<title><g:layoutTitle default="Hilo : ${message(code: "administration")}" /></title>
+    
+	<link rel="icon" type="image/x-icon" href="${resource(dir:'images/app', file:'hilo-icon.png')}" />
 
 
 	<link rel="stylesheet" href="${resource(dir:'bootstrap/3.1.1/css', file:'bootstrap.min.css')}" />
@@ -119,6 +121,8 @@
 				<li><g:link uri="/transaction/list" class="${ordersActive}"><g:message code="orders" /></g:link></li>
 				
 				<li><g:link uri="/page/list" class="${pagesActive}"><g:message code="pages" /></g:link></li>
+				
+				<li><g:link uri="/blog/list" class="${blogActive}"><g:message code="blog" /></g:link></li>
 				
 				<li><g:link uri="/account/admin_list?admin=false" class="${accountsActive}"><g:message code="accounts" /></g:link></li>
 				
