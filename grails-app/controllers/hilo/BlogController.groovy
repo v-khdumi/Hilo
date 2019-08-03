@@ -3,6 +3,7 @@ package hilo
 import grails.plugin.springsecurity.annotation.Secured
 
 import io.hilo.BlogPost
+import io.hilo.BlogCategory
 import io.hilo.Layout
 
 class BlogController {
@@ -21,7 +22,15 @@ class BlogController {
  	@Secured(['ROLE_ADMIN'])
 	def create(){
 		def layouts = Layout.list()
-		[ layouts: layouts ]
+		def categories = BlogCategory.list()
+
+		if(!categories){
+			flash.message = "No blog categories found, you must create at least one category in order to continue."
+			redirect(action:"create_category")
+			return
+		}
+
+		[ layouts: layouts, categories: categories ]
 	}
 
 
@@ -49,6 +58,13 @@ class BlogController {
 			return
 		}
 		def layouts = Layout.list()
+		def categories = BlogCategory.list()
+
+		if(!categories){
+			flash.message = "No blog categories found, you must create at least one category in order to continue."
+			redirect(action:"create_category")
+			return
+		}
 		[ postInstance: postInstance, layouts: layouts ]
 	}
 

@@ -65,6 +65,20 @@
 						<br class="clear"/>
 					</div>
 					
+
+			 		<div class="form-row">
+			 			<span class="form-label twohundred secondary">Category</span>
+			 			<span class="input-container">
+							<g:select name="blogCategory.id"
+									from="${categories}"
+									value="${postInstance?.category?.id}"
+									optionKey="id" 
+									optionValue="name" 
+									class="form-control threehundred"/>
+			 			</span>
+			 			<br class="clear"/>
+			 		</div>
+					
 						  
 
 				

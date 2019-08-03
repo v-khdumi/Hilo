@@ -17,6 +17,7 @@ import io.hilo.ShoppingCart
 import io.hilo.ShoppingCartItem
 import io.hilo.Layout
 import io.hilo.Page
+import io.hilo.BlogCategory
 import io.hilo.State
 import io.hilo.Country
 import io.hilo.Transaction
@@ -65,6 +66,7 @@ class BootStrap {
 		createCountriesAndStates()
 		createLayout()
 		createPages()
+		createBlogCategory()
 		createRoles()
 		createAdmin()
 
@@ -196,6 +198,7 @@ class BootStrap {
 		createPrivacyPolicy(layout)
 		println "Pages : ${Page.count()}"
 	}
+
 	
 	def createHomepage(layout){
 		def homepage = Page.findByTitle("Home")
@@ -231,6 +234,7 @@ class BootStrap {
 		}
 	}
 	
+
 	def createPrivacyPolicy(layout){
 		def privacyPage = Page.findByTitle("Privacy Policy")
 		if(!privacyPage){
@@ -242,6 +246,19 @@ class BootStrap {
 		}
 	}
     
+
+    def createBlogCategory(){
+		def layout = Layout.findByDefaultLayout(true)
+		def name = "Tutorials & How To's"
+    	def blogCategory = BlogCategory.findByName(name)
+    	if(!blogCategory){
+    		blogCategory.name = name
+    		blogCategory.description = "<p>Latest and greatest, everything how to</p>"
+    		blogCategory.save(flush:true)
+    	}
+
+		println "BlogCategories : ${BlogCategory.count()}"
+    }
 	
 	
 	def createCountriesAndStates(){
