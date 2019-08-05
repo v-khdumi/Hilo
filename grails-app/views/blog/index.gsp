@@ -3,12 +3,7 @@
 %>
 ${raw(applicationService.getBlogHeader())}
 	
-	<style type="text/css">
-		.post-content{
-			height:300px;
-			overflow:hidden;
-		}
-	</style>
+
 
 	<g:if test="${flash.message}">
 		<div class="alert alert-info" role="status">${flash.message}</div>
@@ -16,12 +11,24 @@ ${raw(applicationService.getBlogHeader())}
 	
 	<g:each in="${posts}" var="post">
 		<h1>${post.title}</h1>
-		<div class="post-content">${raw(post.content.substring(209))}... <g:link action="view" id="${post.id}">Read More</g:link></div>
+
+		<%
+			def content = post.content.length() > 500 ? post.content.substring(0, 500) : post.content
+			def readmore = post.content.length() > 500 ? true : false
+		%>
+		<div class="post-content">${raw(content)}<br/>
+			<g:if test="${readmore}"><g:link action="view" id="${post.id}">Read More...</g:link></g:if>
+		</div>
 	</g:each>	
 
+	<div style="width:auto;float:right;margin-bottom:20px;">
+		<g:paginate 
+			max="7"
+			maxsteps="5"
+			total="${postsTotal}"
+			class="pull-right" />
+	</div>
 
-	<script type="text/javascript">
-		$(".post-content").collapse()
-	</script>
+	<br class="clear"/>
 
 ${raw(applicationService.getBlogFooter())}

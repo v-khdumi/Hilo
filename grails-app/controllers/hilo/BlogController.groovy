@@ -10,8 +10,9 @@ class BlogController {
 
  	@Secured(['permitAll'])
 	def index(){
-		def posts = BlogPost.list([max: 3, order: 'dateCreated'])
-		[ posts: posts ]
+		def offset = params.offset ? params.offset : 0
+		def posts = BlogPost.list([max: 7, offset: offset, order: 'dateCreated'])
+		[ posts: posts, postsTotal: BlogPost.count()  ]
 	}
 
 
@@ -37,10 +38,6 @@ class BlogController {
 
  	@Secured(['ROLE_ADMIN'])
 	def save(){
-		println params
-
-		redirect(action:"create")
-		return
     	def postInstance = new BlogPost(params)
     	if (!postInstance.save(flush: true)) {
 			def layouts = Layout.list()
