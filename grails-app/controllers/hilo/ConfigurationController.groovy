@@ -1,7 +1,7 @@
 package hilo
 
 import hilo.common.BaseController
-import io.hilo.AppConstants
+import io.hilo.ApplicationConstants
 
 //import org.apache.commons.io.IOUtils
 import grails.io.IOUtils

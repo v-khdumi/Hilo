@@ -4,6 +4,8 @@ import org.apache.shiro.crypto.hash.Sha512Hash
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.crypto.hash.Sha1Hash
 
+import io.hilo.ApplicationConstants
+
 import io.hilo.Account
 import io.hilo.Role
 import io.hilo.AccountRole
@@ -17,7 +19,6 @@ import io.hilo.ShoppingCart
 import io.hilo.ShoppingCartItem
 import io.hilo.Layout
 import io.hilo.Page
-import io.hilo.BlogCategory
 import io.hilo.State
 import io.hilo.Country
 import io.hilo.Transaction
@@ -64,9 +65,8 @@ class BootStrap {
 		println "*******            Bootstrap            *******"
 		println "***********************************************"
 		createCountriesAndStates()
-		createLayout()
+		createLayouts()
 		createPages()
-		createBlogCategory()
 		createRoles()
 		createAdmin()
 
@@ -138,24 +138,40 @@ class BootStrap {
 	}
 	
 	
-	def createLayout(){
+	def createLayouts(){
 		
-		def existingLayout = Layout.findByName("Store Layout: Preset")
+		File cssFile = grailsApplication.mainContext.getResource("css/store.css").file
+		String css = cssFile.text
+
+		def existingLayout = Layout.findByName(ApplicationConstants.PRESET_LAYOUT)
 		if(!existingLayout){	
 			File layoutFile = grailsApplication.mainContext.getResource("templates/storefront/layout.html").file
 			String layoutContent = layoutFile.text
-
-			File cssFile = grailsApplication.mainContext.getResource("css/store.css").file
-			String css = cssFile.text
 
 			def layout = new Layout()
 			layout.content = layoutContent
 			layout.name = "Store Layout: Preset"
 			layout.css = css
 			layout.defaultLayout = true
+			layout.defaultBlogLayout = false
 			
 			layout.save(flush:true)
 			setDefaultScreensLayouts(layout.id.toString())
+		}
+
+		def existingBlogLayout = Layout.findByName(ApplicationConstants.PRESET_BLOG_LAYOUT)
+		if(!existingBlogLayout){	
+			File blogLayoutFile = grailsApplication.mainContext.getResource("templates/storefront/blog-layout.html").file
+			String blogLayoutContent = blogLayoutFile.text
+
+			def blogLayout = new Layout()
+			blogLayout.content = blogLayoutContent
+			blogLayout.name = "Blog Layout: Preset"
+			blogLayout.css = css
+			blogLayout.defaultLayout = false
+			blogLayout.defaultBlogLayout = true
+			
+			blogLayout.save(flush:true)
 		}
 		
 		println "Layouts : ${Layout.count()}"
@@ -245,21 +261,6 @@ class BootStrap {
 			page.save(flush:true)
 		}
 	}
-    
-
-    def createBlogCategory(){
-		def layout = Layout.findByDefaultLayout(true)
-		def name = "Tutorials & How To's"
-    	def blogCategory = BlogCategory.findByName(name)
-    	if(!blogCategory){
-    		blogCategory = new BlogCategory()
-    		blogCategory.name = name
-    		blogCategory.description = "<p>Latest and greatest, everything how to</p>"
-    		blogCategory.save(flush:true)
-    	}
-
-		println "BlogCategories : ${BlogCategory.count()}"
-    }
 	
 	
 	def createCountriesAndStates(){

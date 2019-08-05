@@ -230,6 +230,7 @@ public class DevelopmentData {
 		createOrders()
 		createActivityLogs()
 		createAbandonedCarts()
+		createBlogPosts()
 	}
 
 
@@ -865,6 +866,41 @@ public class DevelopmentData {
 		println "Abandoned/Active Carts : ${ShoppingCart.countByStatus(ShoppingCartStatus.ACTIVE.description())}"
 	}
 	
+
+	// def createBlogCategories(){
+	// 	def layout = Layout.findByDefaultBlogLayout(true)
+		
+	// 	(0..7).each(){ n ->
+ //    		def blogCategory = new BlogCategory()
+ //    		blogCategory.name =  "Blog Category ${n}"
+ //    		blogCategory.description = "<p>Latest and greatest, everything how to ${n}</p>"
+ //    		blogCategory.save(flush:true)  	
+	// 	}
+
+	// 	println "Blog Categories ${BlogCategory.count()}"
+	// }
+
+
+	def createBlogPosts(){
+		
+		def layout = Layout.findByDefaultBlogLayout(true)
+
+		(0..10).each(){ n -> 
+			def post = new BlogPost()
+			post.title = "Suited Spades Blog Title ${n}"
+			post.content = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>"
+			post.layout = layout
+			post.save(flush:true)
+			
+			post.errors.allErrors.each(){ 
+				println it
+			}
+		}
+		
+
+		println "Blog Posts ${BlogPost.count()}"
+	}
+
 	
 	
 	def generateRandomDate(){

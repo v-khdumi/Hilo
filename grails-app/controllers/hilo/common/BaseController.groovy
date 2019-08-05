@@ -2,7 +2,7 @@ package hilo.common
 
 import hilo.common.ControllerConstants
 
-import io.hilo.AppConstants
+import io.hilo.ApplicationConstants
 import io.hilo.Account
 import io.hilo.Catalog
 import io.hilo.Product

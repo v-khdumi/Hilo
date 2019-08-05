@@ -30,6 +30,32 @@ class ApplicationService {
 	}
 	
 	
+
+	def getBlogHeader(blogPostInstance){
+		def layout = Layout.findByDefaultBlogLayout(true)
+		refreshBaseLayoutWrapper(layout)
+
+		header = header.replace("[[STORE_CSS]]", layout?.css ? layout?.css : "")
+
+		def title = blogPostInstance ? blogPostInstance.title : "Blog"
+		def titleFull = getStoreName() + " : " + title
+		replaceAdditionalHeaderTags(titleFull)
+		return header
+	}
+
+
+	def getBlogFooter(){
+		def layout = Layout.findByDefaultBlogLayout(true)
+		refreshBaseLayoutWrapper(layout)
+
+		footer = footer.replace("[[CONTEXT_NAME]]", getContextName())
+		footer = footer.replace("[[CATALOGS]]", getCatalogsMain())
+        footer = footer.replace("[[CATALOG_FILTERS]]", "")
+		footer = footer.replace("[[STORE_JAVASCRIPT]]", layout?.javascript ? layout?.javascript : "")
+		return footer
+	}
+
+
 	
 	def getDefaultHeader(title){
 		def layout = Layout.findByDefaultLayout(true)

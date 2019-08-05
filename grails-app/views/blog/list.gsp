@@ -14,11 +14,7 @@
 	
 	<div class="form-container">
 
-		<h2 class="floatleft">Posts
-		
-			<g:link action="manage" class="btn btn-default pull-right">Categories</g:link>
-			<br class="clear"/>
-		</h2>
+		<h2 class="floatleft">Posts</h2>
 		
 		<br class="clear"/>
 
@@ -43,8 +39,6 @@
 					
 						<g:sortableColumn property="title" title="${message(code: 'title', default: 'Title')}" />
 
-						<th>Blog Category</th>
-
 						<th><g:message code="layout"/></th>
 						
 						<th></th>
@@ -58,8 +52,6 @@
 						<td><g:link action="edit" id="${post.id}">${post.id}</g:link></td>
 
 						<td><g:link action="edit" id="${post.id}">${post.title}</g:link></td>
-					
-						<td>${post.blogCategory.name}</td>
 
 						<td><g:link controller="layout" action="edit" id="${post.layout.id}">${post.layout.name}</g:link></td>
 					
