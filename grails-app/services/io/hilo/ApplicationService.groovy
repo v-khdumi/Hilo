@@ -1138,6 +1138,12 @@ class ApplicationService {
 		return socialMediaEnabled
 	}
 	
+	def getMultiCurrencyEnabled(){
+		if(!properties)setProperties()
+		String multiCurrencyEnabled = properties.getProperty("multi.currency.enabled");
+		//println "++++++++ multiCurrencyEnabled : ${multiCurrencyEnabled} +++++++++++"	
+		return multiCurrencyEnabled
+	}
 	
 	
 	def formatPrice(price){

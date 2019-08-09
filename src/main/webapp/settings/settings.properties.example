@@ -40,3 +40,4 @@ checkout.screen.layout=0
 checkout.success.layout=0
 checkout.preview.layout=0
 registration.screen.layout=0
+multi.currency.enabled=false
