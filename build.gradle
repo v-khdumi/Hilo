@@ -37,7 +37,14 @@ dependencies {
     compile files("lib/easypost-api-client-3.4.0.jar")
     compile files("lib/stripe-java-4.9.0.jar")
     compile files("lib/braintree-java-2.89.0.jar")
-	//compile files("lib/postgresql-42.1.1.jar")
+	compile files("lib/postgresql-42.1.1.jar")
+
+
+    // JAX-B dependencies for JDK 9+
+    compile "javax.xml.bind:jaxb-api:2.2.11"
+    compile "com.sun.xml.bind:jaxb-core:2.2.11"
+    compile "com.sun.xml.bind:jaxb-impl:2.2.11"
+    compile "javax.activation:activation:1.1.1"
 
     /*************************************************************/
 
