@@ -6,13 +6,14 @@
 <html>
 	<head>
 		<title>
-${applicationService.getStoreName()} : Admin Login</title>
+${applicationService.getStoreName()} : <g:message code="admin.signin"/></title>
 		<link rel="stylesheet" href="${resource(dir:'bootstrap/3.1.1/css', file:'bootstrap.min.css')}" />
 		<link rel="stylesheet" href="${resource(dir:'css', file:'admin.css')}" />
 	
 	</head>
 	<body>
 		
+
 <style type="text/css">
 html,
 	body{ 
@@ -30,6 +31,7 @@ html,
 		width:400px;
 		margin:50px auto;
 		background:#fff;
+		position:relative;
 		text-align:left !important;
 		border-radius: 3px 3px 3px 3px;
 		-moz-border-radius: 3px 3px 3px 3px;
@@ -79,6 +81,10 @@ html,
 		color:rgba(0,0,0,0.54) !important;
 	}
 	
+	label{
+		display:block;
+	}
+
 	input[type="text"],
 	input[type="password"]{
 		width:250px;
@@ -95,26 +101,31 @@ html,
 	
 	<div class="container">
 	
+
+			<a href="http://www.goioc.xyz" target="_blank" id="" title="IOC"><img src="${resource(dir:'images/app/hilo-icon.png')}" style="height:inherit;width:inherit;outline:none;position:absolute;top:0px;right:70px;"/></a>
+
 		<g:if test="${flash.message}">
 			<div class="alert alert-info">${flash.message}</div>
 		</g:if>
 		
-		<div>
-			
-			<!-- original g:<form controller="auth" action="signIn" class="form">-->
-			<!-- first attempt g:form controller="login" action="authenticate">-->
+		<h1><g:message code="signin"/></h1>
+
+		<div style="position:relative;">
+
+
 			<form action="/${applicationService.getContextName()}/login/authenticate" method="POST" id="loginForm" autocomplete="off">
 			
-				<input type="hidden" name="postUrl" value="http://localhost:8080/${applicationService.getContextName()}/admin"/>
+				<input type="hidden" name="postUrl" value="/${applicationService.getContextName()}/admin"/>
 			
 				<div class="form-group">
-				  	<label for="username">Username</label>
+				  	<label for="username"><g:message code="username"/></label>
 				  	<input type="text" name="username" class="form-control" id="username" placeholder="">
 				</div>
-			
+
+
 				<div class="form-group">
-				  	<label for="password">Password</label>
-				  	<input type="password" name="password" class="form-control" id="password" placeholder="******">
+				  	<label for="password" id="password"><g:message code="password"/></label>
+				  	<input type="password" name="password" class="form-control" id="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;">
 				</div>
 				
 				<!--
@@ -124,12 +135,11 @@ html,
 				</div>
 				-->
 				
-				
 				<div class="form-group">
-				  	<label><g:link controller="account" action="customer_forgot">Forgot password?</g:link></label>
+				  	<label><g:link controller="account" action="customer_forgot"><g:message code="forgot.password"/>?</g:link></label>
 				</div>
 				
-				<button type="submit" class="btn btn-default btn-primary pull-right">Login</button>
+				<button type="submit" class="btn btn-default btn-primary pull-right"><g:message code="signin"/></button>
 				
 				<br class="clear"/>
 				

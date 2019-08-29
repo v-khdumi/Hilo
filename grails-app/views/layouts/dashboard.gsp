@@ -133,7 +133,7 @@
 		
 		<div id="content-container">
 			
-			<a href="http://www.openabc.xyz" target="_blank" id="abc-link" title="ABC : Simple Open Source SMB Software"><img src="${resource(dir:'images/app/hilo-icon.png')}" style="height:inherit;width:inherit;outline:none;"/></a>
+			<a href="http://www.goioc.xyz" target="_blank" id="abc-link" title="IOC"><img src="${resource(dir:'images/app/hilo-icon.png')}" style="height:inherit;width:inherit;outline:none;"/></a>
 			
 			
 			<div id="header">

@@ -68,6 +68,7 @@ ${applicationService.getStoreName()} : Admin Login</title>
 			<div class="alert alert-info">${flash.message}</div>
 		</g:if>
 		
+			
 		<div>
 			
 			<g:form controller="auth" action="signIn" class="form">
